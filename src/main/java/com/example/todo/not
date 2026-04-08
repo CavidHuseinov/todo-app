@@ -1,3 +1,17 @@
 Javada: I.folder adlari kicik herf
 II. class adları PascalCase
 III. field adları camelCase olaraq gedir.
+
+
+JDBC (Java Database Connectivity) - Bu database application.yaml icine elave edende
+url hissesinde java oxuya bileceyi formata salmasi ucun istifade olunur
+
+Javada bele bir qayda var ki class yazanda yeni ENTITY biz onu private edib getter setter
+edirik bunuda her defe manuel etmek mentiqe uygun deyil ve kod tekraridir.
+Buna gore biz Lombok plugin istifade edirik
+
+Jakarta - Bu bize proyektimiz ile db arasinda elaqe qurmaga komekci olur.
+yamlda birde bele birsey var ki proyekt ile plugin bir biri ile connection gire
+bilsin driver-class-name: org.postgresql.Driver
+
+
