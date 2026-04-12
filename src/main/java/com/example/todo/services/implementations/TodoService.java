@@ -1,7 +1,7 @@
 package com.example.todo.services.implementations;
 
 import com.example.todo.entities.Todo;
-import com.example.todo.repository.TodoRepository;
+import com.example.todo.repository.ITodoRepository;
 import com.example.todo.services.interfaces.ITodoService;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,12 @@ import java.util.List;
 @Service
 public class TodoService implements ITodoService {
 
-    private final TodoRepository _todorepository;
+    private final ITodoRepository _todorepository;
 
-    public TodoService(TodoRepository todorepository) {
-        _todorepository = todorepository;
+    public TodoService(ITodoRepository repository) {
+        _todorepository = repository;
     }
+
 
     @Override
     public List<Todo> getAllTodos() {
@@ -40,6 +41,7 @@ public class TodoService implements ITodoService {
                 .orElseThrow(()-> new RuntimeException("not found"));
         existingTodo.setTitle(todo.getTitle());
         existingTodo.setContent(todo.getContent());
+        _todorepository.save(existingTodo);
         return  _todorepository.save(existingTodo);
 
     }
