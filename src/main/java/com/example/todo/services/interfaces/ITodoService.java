@@ -10,5 +10,5 @@ public interface ITodoService {
     public Todo getByIdTodo(int id);
     void createTodo(Todo todo);
     Todo updateTodo(int id, Todo todo);
-    Todo deleteTodo(int id);
+    void deleteTodo(int id);
 }

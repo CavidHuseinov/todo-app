@@ -45,10 +45,10 @@ public class TodoService implements ITodoService {
     }
 
     @Override
-    public Todo deleteTodo(int id) {
+    public void deleteTodo(int id) {
       Todo todo = _todorepository.findById(id)
                .orElseThrow(() -> new RuntimeException("Not Found"));
        _todorepository.deleteById(id);
-       return todo;
+
     }
 }
