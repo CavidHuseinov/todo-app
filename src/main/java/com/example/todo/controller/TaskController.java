@@ -1,7 +1,7 @@
 package com.example.todo.controller;
 
 import com.example.todo.entities.Task;
-import com.example.todo.services.implementations.TaskService;
+import com.example.todo.services.interfaces.ITaskService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,9 +9,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
-    private final TaskService _taskService;
+    private final ITaskService _taskService;
 
-    public TaskController(TaskService taskService) {
+    public TaskController(ITaskService taskService) {
         _taskService = taskService;
     }
 

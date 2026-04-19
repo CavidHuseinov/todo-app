@@ -42,7 +42,7 @@ public class TodoService implements ITodoService {
         existingTodo.setTitle(todo.getTitle());
         existingTodo.setContent(todo.getContent());
         _todorepository.save(existingTodo);
-        return  _todorepository.save(existingTodo);
+        return  existingTodo;
 
     }
 

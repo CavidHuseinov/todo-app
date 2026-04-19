@@ -1,7 +1,7 @@
 package com.example.todo.controller;
 
 import com.example.todo.entities.Todo;
-import com.example.todo.services.implementations.TodoService;
+import com.example.todo.services.interfaces.ITodoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,11 +9,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
-    private final TodoService _todoService;
+    private final ITodoService _todoService;
 
-    public TodoController(TodoService todoService) {
+    public TodoController(ITodoService todoService) {
         _todoService = todoService;
     }
+
     @GetMapping
     public List<Todo> getAll() {
         return _todoService.getAllTodos();
